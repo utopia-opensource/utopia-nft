@@ -1,3 +1,7 @@
 package main
 
-type solution struct{}
+type solution struct {
+	Config config
+}
+
+type config struct{}
