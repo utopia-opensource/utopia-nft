@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
+	"log"
 )
 
 func newSolution() *solution {
@@ -24,5 +25,11 @@ func (sol *solution) loadConfig() error {
 }
 
 func main() {
-
+	app := newSolution()
+	err := checkErrors(
+		app.loadConfig,
+	)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
