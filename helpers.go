@@ -1,5 +1,10 @@
 package main
 
+import (
+	"math/rand"
+	"time"
+)
+
 type errorFunc func() error
 
 func checkErrors(errChecks ...errorFunc) error {
@@ -10,4 +15,10 @@ func checkErrors(errChecks ...errorFunc) error {
 		}
 	}
 	return nil
+}
+
+// [0,max)
+func getRandomInt(max int) int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(max)
 }

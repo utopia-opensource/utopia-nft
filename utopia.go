@@ -19,3 +19,18 @@ func (sol *solution) connect() error {
 	}
 	return nil
 }
+
+// return image in base64
+func (sol *solution) getRandomStickerImage() (string, error) {
+	stickers, err := sol.Client.GetStickerNamesByCollection(sol.Config.Task.StickerCollection)
+	if err != nil {
+		return "", nil
+	}
+
+	stickerName := stickers[getRandomInt(len(stickers))]
+
+	return sol.Client.GetStickerImage(
+		sol.Config.Task.StickerCollection,
+		stickerName,
+	)
+}
