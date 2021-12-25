@@ -9,6 +9,7 @@ type solution struct {
 
 type config struct {
 	Utopia clientConnectionConfig `json:"utopia"`
+	Task   taskConfig             `json:"task"`
 }
 
 type clientConnectionConfig struct {
@@ -17,3 +18,5 @@ type clientConnectionConfig struct {
 	Host     string `json:"host"`
 	Port     int    `json:"port"`
 }
+
+type taskConfig struct{}
