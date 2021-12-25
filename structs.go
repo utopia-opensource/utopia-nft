@@ -19,4 +19,6 @@ type clientConnectionConfig struct {
 	Port     int    `json:"port"`
 }
 
-type taskConfig struct{}
+type taskConfig struct {
+	StickerCollection string `json:"stickersCollection"`
+}
